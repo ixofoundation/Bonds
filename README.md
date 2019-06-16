@@ -49,16 +49,13 @@ Each Cosmic Bond has an initial set of constant state (invariant) parameters tha
 * Token symbol
 * Reserve wallet address
 * Collateral wallet address
-
 * Supply
 * Initial reserve
 * Exponent constant
 * Slope constant
-
 * Transaction fee rate
 * Exit tax rate
 * Coupon value (percentage)
-* Tap
 
 When a Cosmic Bond transaction (such as buy, sell, swap) is submitted, this includes the variable parameters:
 * Order quantity
