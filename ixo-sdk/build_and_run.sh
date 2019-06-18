@@ -1,5 +1,5 @@
 make install
-rm -rf ~/.ns*
+rm -rf ~/.ns2*
 
 nsd init myvalidator --chain-id namechain
 
