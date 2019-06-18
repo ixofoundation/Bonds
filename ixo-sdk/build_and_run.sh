@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 make install
 rm -rf ~/.ns2*
 
