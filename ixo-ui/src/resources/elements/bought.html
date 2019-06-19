@@ -1,0 +1,36 @@
+<template>
+  <require from="./bought.scss"></require>
+  <div class="contentArea" style="margin-top: 5px;">
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <div class="row" style="padding: 10px;">
+          <div class="col-md-4" style="position: relative; top: 8px;"><label class="buyLabel">Number of tokens to buy</label></div>
+          <div class="col-md-8">
+            <div style="font-family: Overpass; font-size: 20px;">${numOfTokens} EDU</div>
+            <small id="numTokenHelp" class="form-text text-muted">My current balance is 230 EDU</small>
+          </div>
+        </div>
+        <div class="row" style="padding: 10px;">
+          <div class="col-md-4" style="position: relative; top: 8px;"><label class="buyLabel">Total payment amount</label></div>
+          <div class="col-md-8">
+            <div style="font-family: Overpass; font-size: 20px;">${totalPaymentAmount} IXO</div>
+            <small id="numTokenHelp" class="form-text text-muted">My current balance is 56005 IXO</small>
+          </div>
+        </div>
+        <div class="row" style="padding: 10px;">
+          <div class="col-md-4" style="position: relative; top: 8px;"><label class="buyLabel">Price per EDU</label>
+          </div>
+          <div class="col-md-8">
+            <div style="font-family: Overpass; font-size: 20px;">${pricePerEDU}</div>
+            <small id="numTokenHelp" class="form-text text-muted">My maximum token price is 300 IXU</small>  
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center"><button type="button" class="btn btn-primary" click.delegate="submitOrder()">SUBMIT ORDER</button></div>
+        </div>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+  </div>
+</template>

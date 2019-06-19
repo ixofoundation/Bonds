@@ -1,0 +1,43 @@
+<template>
+
+  <div class="container">
+    <section>
+      <div class="row" style="width: 95%;">
+        <textarea class="form-control form-rounded" rows="10" placeholder="Enter message body"
+          value.bind="msgBody"></textarea>
+        <button type="button" class="btn btn-primary" click.delegate="signContent()">SIGN MESSAGE</button>
+      </div>
+
+      <br><br>
+
+      <div class="row">Signing Response:</div>
+      <div class="row">
+        <div class="col-md-3">Type</div>
+        <div class="col-md-9">${signingResponse.type}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">Created</div>
+        <div class="col-md-9">${signingResponse.created}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">Creator</div>
+        <div class="col-md-9">${signingResponse.creator}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">Public key</div>
+        <div class="col-md-9">${signingResponse.publicKey}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">Signature value</div>
+        <div class="col-md-9">${signingResponse.signatureValue}</div>
+      </div>
+    </section>
+
+
+    <!--div class="row">
+        <div class="col text-center"><button type="button" class="btn btn-primary" click.delegate="buy()">buy</button></div>
+      </div-->
+
+  </div>
+
+</template>

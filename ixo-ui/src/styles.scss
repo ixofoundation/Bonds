@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css?family=Overpass:400,900');
+
+body {
+  margin: 0;
+}
+
+.splash {
+  text-align: center;
+  margin: 10% 0 0 0;
+  box-sizing: border-box;
+}
+
+.splash .message {
+  font-size: 72px;
+  line-height: 72px;
+  text-shadow: rgba(0, 0, 0, 0.5) 0 0 15px;
+  text-transform: uppercase;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.splash .fa-spinner {
+  text-align: center;
+  display: inline-block;
+  font-size: 72px;
+  margin-top: 50px;
+}
+
+.page-host {
+  /*  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50px;
+  bottom: 0;*/
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+@media print {
+  .page-host {
+    position: absolute;
+    left: 10px;
+    right: 0;
+    top: 50px;
+    bottom: 0;
+    overflow-y: inherit;
+    overflow-x: inherit;
+  }
+}
+
+section {
+  margin: 0 20px;
+}
+
+.navbar-nav li.loader {
+  margin: 12px 24px 0 6px;
+}
+
+.pictureDetail {
+  max-width: 425px;
+}
+
+/* animate page transitions */
+section.au-enter-active {
+  -webkit-animation: fadeInRight 1s;
+  animation: fadeInRight 1s;
+}
+
+div.au-stagger {
+  /* 50ms will be applied between each successive enter operation */
+  -webkit-animation-delay: 50ms;
+  animation-delay: 50ms;
+}
+
+.card-container.au-enter {
+  opacity: 0;
+}
+
+.card-container.au-enter-active {
+  -webkit-animation: fadeIn 2s;
+  animation: fadeIn 2s;
+}
+
+.card {
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #CCC;
+  border-radius: 8px;
+  text-align: center;
+  padding: 0;
+  background-color: #337ab7;
+  color: rgb(136, 172, 217);
+  margin-bottom: 32px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
+.card .content {
+  margin-top: 10px;
+}
+
+.card .content .name {
+  color: white;
+  text-shadow: 0 0 6px rgba(0, 0, 0, .5);
+  font-size: 18px;
+}
+
+.card .header-bg {
+  /* This stretches the canvas across the entire hero unit */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px #FFF solid;
+  border-radius: 6px 6px 0 0;
+}
+
+.card .avatar {
+  position: relative;
+  margin-top: 15px;
+  z-index: 100;
+}
+
+.card .avatar img {
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px #FFF solid;
+}
+
+
+.mt-20 {
+  margin-top: 20 !important;
+}
+
+ul#horizontal-list {
+  padding-inline-start: 0px !important;
+  list-style: none;
+  padding-top: 20px;
+  padding-bottom: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+ul#horizontal-list li {
+  padding: 7px;
+}
+
+ul#horizontal-list li a {
+  font-family: Overpass;
+  font-style: normal;
+  font-size: 16px;
+  color: black;
+}
+
+.inactiveNavItem {
+  display: inline-block; 
+  width: 100px;
+  text-align: center; 
+}
+
+.activeNavItem {
+  display: inline-block; 
+  width: 100px; 
+  text-align: center; 
+  border-bottom: 5px solid #00DEEB;
+  font-weight: bold;
+}
+
+
+select {
+  width: 100%;
+  background-color: white;
+  border: thin solid #ccc;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select.minimal {
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+select.minimal:focus {
+/*  background-image:
+    linear-gradient(45deg, green 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, green 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: green;*/
+  outline: 0;
+}
+
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+.selectWrapper {
+  width: 400px;
+}
+
+.headline {
+  font-family: Overpass;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.contentArea {
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 0;
+
+  font-family: Overpass;
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+
+
+/* toss browser styles for select*/
+/*select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+}
+select::-ms-expand {
+  display: none;
+}
+select:focus::-ms-value {
+  background-color: transparent;
+}
+
+.selectWrapper {
+  width: 200px;
+  position: relative;
+}
+
+.select-wrapper::before {
+  font-family: fontello;
+  content: "\e800";
+  font-size: 20px;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  color: #fff;
+  pointer-events: none;
+}
+
+select {
+  width: 100%;
+  height: 40px;
+  padding-left: 10px;
+  border-color: #56CCF2;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  color: #666;
+}
+*/
+
+/* animation definitions */
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0)
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    -ms-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0)
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

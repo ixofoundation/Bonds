@@ -1,0 +1,18 @@
+<template>
+  <require from="bootstrap/dist/css/bootstrap.min.css"></require>
+  <require from="font-awesome/css/font-awesome.min.css"></require>
+  <require from="./styles.scss"></require>
+  <require from="resources/elements/navigation.html"></require>
+  <require from="resources/elements/header"></require>
+
+  <div class="container">
+    <header></header>
+
+    <navigation router.bind="router"></navigation>
+
+    <div class="row well" style="margin: 0 2px 0 2px;">
+      <router-view></router-view>
+    </div>
+  </div>
+
+</template>

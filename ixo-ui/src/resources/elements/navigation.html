@@ -1,0 +1,11 @@
+<template bindable="router">
+  <require from="./../../styles.scss"></require>
+
+
+    <ul id="horizontal-list">
+      <li repeat.for="row of router.navigation" class="${row.isActive ? 'active activeNavItem' : 'inactiveNavItem'}">
+        <a href.bind="row.href" style="text-decoration: none;">${row.title}</a>
+      </li>
+    </ul>
+
+</template>

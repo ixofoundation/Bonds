@@ -1,0 +1,18 @@
+<template>
+  <require from="./exchange.scss"></require>
+  <require from="./balances"></require>
+  <require from="resources/elements/navigation.html"></require>
+
+  <section class="au-animate">
+    <balances></balances>
+
+    <navigation router.bind="router"></navigation>
+
+    <div class="col-md-12" style="padding: 0px;">
+      <div>
+        <router-view></router-view>
+      </div>
+    </div>
+
+  </section>
+</template>

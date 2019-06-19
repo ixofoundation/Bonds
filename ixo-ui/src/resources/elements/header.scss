@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Overpass:400,900');
+@import url('https://rsms.me/inter/inter.css');
+
+/* t r b l */
+#header {
+  margin: 50px 0 0px 0;
+}
+.headlineFont {
+  font-family: Overpass;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.headlineText {
+  @extend .headlineFont;
+  font-size: 24px;
+  line-height: 48px;
+  align-items: center;
+  color: #000000;
+}
+
+.tokenName {
+  @extend .headlineText;
+  margin: 0 5px 0 5px;
+}
+
+.address {
+  position: relative;
+  top: -2px;
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  color: #828282;
+  mix-blend-mode: normal;
+}
+
+/* Bitmap */
+.idImage {
+  background: url("./../assets/id.png");
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  width: 23px;
+  height: 23px;
+}
+

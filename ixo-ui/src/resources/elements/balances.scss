@@ -1,0 +1,34 @@
+@import url('https://rsms.me/inter/inter.css');
+
+.mls {
+  margin-left: 0px !important;
+}
+
+.inter {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.firstLine {
+  font-size: 14px;
+  font-weight: 300;
+  color: #828282;
+}
+
+.secondLine {
+  @extend .inter;
+  font-size: 24px;
+  line-height: 155.48%;
+}
+
+.thirdLine {
+  @extend .inter;
+  font-size: 12px;
+  line-height: 200%;
+  color: #4F4F4F;
+}
+
+#alphaValue {
+  color: #EB5757;
+}
