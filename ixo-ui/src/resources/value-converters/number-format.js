@@ -3,7 +3,6 @@ import numeral from 'numeral';
 
 @inject( numeral )
 export class NumberFormatValueConverter {
-
   constructor() {
     this.numeral = numeral;
   }
@@ -13,8 +12,11 @@ export class NumberFormatValueConverter {
       return '';
     }
 
-    let result = numeral( value ).format('0,0.00');
-    return result;
+    const strVal = '' + value;
+    if ( strVal.includes( '.' ) ) {
+      return numeral( value ).format('0,0.00');
+    }
+    return numeral( value ).format('0,0');
   }
 
   fromView( formattedValue ) {

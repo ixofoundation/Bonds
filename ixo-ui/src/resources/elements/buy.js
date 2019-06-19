@@ -60,12 +60,15 @@ export class Buy {
   async getQuote() {
     try {
       //TODO block ui
-      const result = await this.svcChain.quote( this.message );
+
+      //TODO call correct service
+      // const result = await this.svcChain.quote( this.message );
+
       //TODO handover to 'bought' VM
       this.router.navigateToRoute( 'bought' );
     } catch ( err ) {
       console.log( err );
-      throw error;
+      throw err;
     }
   }
 }

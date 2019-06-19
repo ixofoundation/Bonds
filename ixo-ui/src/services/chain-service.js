@@ -13,7 +13,15 @@ export class ChainService {
     } );
   }
 
+  async quote( message ) {
+    //might be incorrect
+    return await this.web.fetch( config => {
+      return config.withUrl( '/txs' ).withMethod( 'POST' ).withBody( message );
+    } );
+  }
+
   async sendSignedMessage( message ) {
+    //for testing purpose only
     return await this.web.fetch( config => {
       return config.withUrl( '/txs' ).withMethod( 'POST' ).withBody( message );
     } );
