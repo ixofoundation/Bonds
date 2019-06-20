@@ -1,5 +1,7 @@
 ![](https://i.imgur.com/7YZMVTd.jpg)
 
+# Contents
+[TOC]
 
 # Cosmic Bonding
 Cosmic Bonding is a custom Cosmos SDK module that provides universal token bonding curve functions to mint, burn or swap any token in a Cosmos blockchain.
@@ -12,6 +14,8 @@ The Cosmic Bonding module can be deployed through Cosmos Hubs and Zones to deliv
 * Curation markets (like [Relevant](https://github.com/relevant-community/contracts/tree/bondingCurves/contracts))
 * Development Impact Bonds (like ixo alpha-Bonds)
 * Continuous organisations (like [Moloch DAO](https://molochdao.com/))
+
+> A wise observation is that "...prices are an instrument of communication and guidance which embody more information than we directly have". [name=F.H. Hayek]
 
 ## Module functions
 
@@ -67,3 +71,11 @@ The module returns the following parameters:
 ...
 
 ## Initialisation
+
+Setup sequence
+---
+```sequence
+
+:::info
+**This page is still under construction**!
+:::
