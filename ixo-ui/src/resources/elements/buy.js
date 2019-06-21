@@ -62,7 +62,7 @@ export class Buy {
       //TODO block ui
 
       //TODO call correct service
-      // const result = await this.svcChain.quote( this.message );
+      const result = await this.svcChain.quote( this.message );
 
       //TODO handover to 'bought' VM
       this.router.navigateToRoute( 'bought' );

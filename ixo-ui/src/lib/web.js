@@ -1,25 +1,28 @@
 import { inject } from 'aurelia-framework';
 import { HttpClient } from 'aurelia-fetch-client';
 import env from '../environment';
+import { withBaseUrl, sendJSON, expectJSON, withBearerToken } from 'lib/custom-decorators';
 
-
-@inject(HttpClient)
-export class Web {
-  constructor(http) {
-    http.configure(config => {
-      config
-        .withBaseUrl(env.chainServiceUrl)
-        .withDefaults({
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          }
-        })
-        .withInterceptor(this.interceptor);
-    });
-    this.http = http;
+@withBaseUrl(env.chainServiceUrl)
+@sendJSON()
+@expectJSON()
+@withBearerToken()
+export class ApiClient extends HttpClient {
+  acquireToken( request ) {
+    return '';
   }
+}
 
+@inject(ApiClient)
+export class Web {
+  constructor( apiClient ) {
+    apiClient.configure( config => apiClient.modifyConfiguration( config ) );
+
+    apiClient.configure(config => {
+      config.withInterceptor( this.interceptor );
+    });
+    this.apiClient = apiClient;
+  }
 
   get interceptor() {
     let me = this;
@@ -38,19 +41,18 @@ export class Web {
     return response;
   }
 
-
-  async fetch( config ) {
+  async fetch(config) {
     let realConfig;
-    if ( typeof config === 'object' ) {
+    if (typeof config === 'object') {
       realConfig = config;
-    } else if ( typeof config === 'function' ) {
+    } else if (typeof config === 'function') {
       realConfig = new WebLibConfig();
       realConfig.url = '';
       realConfig.method = 'GET';
       realConfig.requestParams = [];
       realConfig.requestBody = undefined;
-      let cnf = config( realConfig );
-      if ( WebLibConfig.prototype.isPrototypeOf(cnf) ) {
+      let cnf = config(realConfig);
+      if (WebLibConfig.prototype.isPrototypeOf(cnf)) {
         realConfig = cnf;
       }
     } else {
@@ -58,37 +60,37 @@ export class Web {
     }
 
     let { url, method, requestParams, requestBody } = realConfig;
-    url = this.addRequestParams( url, requestParams );
+    url = this.addRequestParams(url, requestParams);
 
-    const response = await this.http.fetch( url, { method: method, body: JSON.stringify( requestBody ) } );
+    const response = await this.apiClient.fetch(url, { method: method, body: JSON.stringify(requestBody) });
 
-    if ( response.status >= 200 && response.status <= 300 ) {
+    if (response.status >= 200 && response.status <= 300) {
       let contentType = response.headers.get('content-type');
-      if ( contentType && contentType.includes('application/json') ) {
+      if (contentType && contentType.includes('application/json')) {
         try {
           return await response.json();
-        } catch ( e ) {
+        } catch (e) {
           throw response.body;
         }
       } else {
-        console.log( `No JSON - content type is: ${contentType}` );
+        console.log(`No JSON - content type is: ${contentType}`);
         let result = await response.text();
         return result;
       }
     } else {
-      return Promise.reject( { status: response.status } );
+      return Promise.reject({ status: response.status });
     }
   }
 
 
-  addRequestParams( url, requestParams ) {
-    if ( requestParams && requestParams.length > 0 ) {
+  addRequestParams(url, requestParams) {
+    if (requestParams && requestParams.length > 0) {
       let urlWithParams = url + '?';
-      for ( let i = 0; i < requestParams.length; i++ ) {
+      for (let i = 0; i < requestParams.length; i++) {
         urlWithParams = urlWithParams + requestParams[i].key;
         urlWithParams = urlWithParams + '=';
         urlWithParams = urlWithParams + requestParams[i].value;
-        if ( i < requestParams.length - 1 ) {
+        if (i < requestParams.length - 1) {
           urlWithParams = urlWithParams + '&';
         }
       }

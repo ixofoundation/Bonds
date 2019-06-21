@@ -1,5 +1,6 @@
 export default {
   debug: true,
   testing: true,
-  chainServiceUrl: 'http://localhost:8765'
+  corsAnywhereUrlPrefix: 'https://cors-anywhere.herokuapp.com/',
+  chainServiceUrl: 'api'
 };
