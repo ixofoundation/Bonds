@@ -6,6 +6,10 @@ For more information, go to https://aurelia.io/docs/cli/webpack
 
 It is necessary to have IXO Keysafe browser plugin installed to be able to use web3 features. Go to https://chrome.google.com/webstore/detail/ixo-keysafe/nnlfaleaeoefglohpacnfgoeldfakkjk to get the plugin.
 
+
+![alt text](./screen.png "Screenshot")
+
+
 ## Run dev app
 
 Run `au run`, then open `http://localhost:8080`
@@ -27,3 +31,4 @@ Run `au build --env prod`.
 Run `au test` (or `au jest`).
 
 To run in watch mode, `au test --watch` or `au jest --watch`.
+
