@@ -1,29 +1,37 @@
 @import url('https://rsms.me/inter/inter.css');
+@import '../../token';
 
-.mls {
-  margin-left: 0px !important;
+.token-edu--balances {
+  @extend .token-edu;
+  @extend .token--margin;
 }
 
-.inter {
+.token-ixo--balances {
+  @extend .token-ixo;
+  @extend .token--margin;
+}
+
+.interFont {
   font-family: Inter, sans-serif;
   font-style: normal;
   font-weight: normal;
 }
 
-.firstLine {
+.balances-firstLine {
   font-size: 14px;
   font-weight: 300;
   color: #828282;
 }
 
-.secondLine {
-  @extend .inter;
+
+.balances-secondLine {
+  @extend .interFont;
   font-size: 24px;
   line-height: 155.48%;
 }
 
-.thirdLine {
-  @extend .inter;
+.balances-thirdLine {
+  @extend .interFont;
   font-size: 12px;
   line-height: 200%;
   color: #4F4F4F;

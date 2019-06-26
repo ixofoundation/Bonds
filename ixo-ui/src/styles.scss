@@ -26,27 +26,10 @@ body {
 }
 
 .page-host {
-  /*  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50px;
-  bottom: 0;*/
   overflow-x: hidden;
   overflow-y: auto;
 }
 
-
-@media print {
-  .page-host {
-    position: absolute;
-    left: 10px;
-    right: 0;
-    top: 50px;
-    bottom: 0;
-    overflow-y: inherit;
-    overflow-x: inherit;
-  }
-}
 
 section {
   margin: 0 20px;
@@ -60,14 +43,12 @@ section {
   max-width: 425px;
 }
 
-/* animate page transitions */
 section.au-enter-active {
   -webkit-animation: fadeInRight 1s;
   animation: fadeInRight 1s;
 }
 
 div.au-stagger {
-  /* 50ms will be applied between each successive enter operation */
   -webkit-animation-delay: 50ms;
   animation-delay: 50ms;
 }
@@ -204,23 +185,8 @@ select.minimal {
 }
 
 select.minimal:focus {
-/*  background-image:
-    linear-gradient(45deg, green 50%, transparent 50%),
-    linear-gradient(135deg, transparent 50%, green 50%),
-    linear-gradient(to right, #ccc, #ccc);
-  background-position:
-    calc(100% - 15px) 1em,
-    calc(100% - 20px) 1em,
-    calc(100% - 2.5em) 0.5em;
-  background-size:
-    5px 5px,
-    5px 5px,
-    1px 1.5em;
-  background-repeat: no-repeat;
-  border-color: green;*/
   outline: 0;
 }
-
 
 select:-moz-focusring {
   color: transparent;
@@ -253,55 +219,18 @@ select:-moz-focusring {
 }
 
 
-
-
-/* toss browser styles for select*/
-/*select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  border: none;
-}
-select::-ms-expand {
-  display: none;
-}
-select:focus::-ms-value {
-  background-color: transparent;
+@media print {
+  .page-host {
+    position: absolute;
+    left: 10px;
+    right: 0;
+    top: 50px;
+    bottom: 0;
+    overflow-y: inherit;
+    overflow-x: inherit;
+  }
 }
 
-.selectWrapper {
-  width: 200px;
-  position: relative;
-}
-
-.select-wrapper::before {
-  font-family: fontello;
-  content: "\e800";
-  font-size: 20px;
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  color: #fff;
-  pointer-events: none;
-}
-
-select {
-  width: 100%;
-  height: 40px;
-  padding-left: 10px;
-  border-color: #56CCF2;
-  color: #fff;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  border: 1px solid lightgray;
-  border-radius: 3px;
-  outline: none;
-  cursor: pointer;
-  color: #666;
-}
-*/
-
-/* animation definitions */
 @-webkit-keyframes fadeInRight {
   0% {
     opacity: 0;

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Overpass:400,900');
 
-.eduToken {
+.token {
   font-family: Overpass;
   font-style: normal;
   font-weight: normal;
@@ -9,23 +9,27 @@
   position: relative;
   top: -3px;
   padding: 5px 7px 2px 7px;
-  margin: 0 7px 0 7px;
-  color: #3E8A5F;
-  background: #6FCF97;
+  margin: 0 3px 0 7px;
+  border: 1px dashed lightslategray;
   border-radius: 5px;
 }
 
-.ixoToken {
-  font-family: Overpass;
-  font-style: normal;
-  font-weight: normal;
-  font-weight: 900;
-  font-size: 15px;
-  position: relative;
-  top: -3px;
-  padding: 5px 7px 2px 7px;
-  margin: 0 7px 0 7px;
+.token-edu {
+  @extend .token;
+  color: #3E8A5F;
+  background: #6FCF97;
+}
+
+.token-ixo {
+  @extend .token;
   color: #154058;
   background: #56CCF2;
-  border-radius: 5px;
 }
+
+.token--margin {
+  margin-left: 0px !important;
+  margin-right: 10px;
+}
+
+
+

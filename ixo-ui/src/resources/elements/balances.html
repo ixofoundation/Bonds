@@ -1,34 +1,34 @@
 <template>
   <require from="./balances.scss"></require>
-  <require from="../../token.scss"></require>
+  <!-- <require from="../../token.scss"></require> -->
   <require from="resources/value-converters/number-format"></require>
   <div class="headline">Balances</div>
 
   <div class="row contentArea">
     <div class="col-md-2">
-      <div class="firstLine">MY STAKE</div>
-      <div class="secondLine"><span class="eduToken mls">EDU</span>${myFun | numberFormat}</div>
-      <div class="thirdLine">&dollar;${myFunDollar | numberFormat}</div>
+      <div class="balances-firstLine">MY STAKE</div>
+      <div class="balances-secondLine"><span class="token-edu--balances">EDU</span>${myFun | numberFormat}</div>
+      <div class="balances-thirdLine">&dollar;${myFunDollar | numberFormat}</div>
     </div>
     <div class="col-md-3">
-      <div class="firstLine">TOTAL EDU SUPPLY</div>
-      <div class="secondLine"><span class="eduToken mls">EDU</span>${funTotalSupply | numberFormat}</div>
-      <div class="thirdLine">&dollar;${funTotalSupplyDollar | numberFormat}</div>
+      <div class="balances-firstLine">TOTAL EDU SUPPLY</div>
+      <div class="balances-secondLine"><span class="token-edu--balances">EDU</span>${funTotalSupply | numberFormat}</div>
+      <div class="balances-thirdLine">&dollar;${funTotalSupplyDollar | numberFormat}</div>
     </div>
     <div class="col-md-3">
-      <div class="firstLine">PRICE</div>
-      <div class="secondLine"><span class="ixoToken mls">IXO</span>${fundingPool | numberFormat}</div>
-      <div class="thirdLine">&dollar;${fundingPoolDollar | numberFormat}</div>
+      <div class="balances-firstLine">PRICE</div>
+      <div class="balances-secondLine"><span class="token-ixo--balances">IXO</span>${fundingPool | numberFormat}</div>
+      <div class="balances-thirdLine">&dollar;${fundingPoolDollar | numberFormat}</div>
     </div>
     <div class="col-md-3">
-      <div class="firstLine">BOUNTY</div>
-      <div class="secondLine"><span class="ixoToken mls">IXO</span>${collateral | numberFormat}</div>
-      <div class="thirdLine">&dollar;${collateralDollar | numberFormat}</div>
+      <div class="balances-firstLine">BOUNTY</div>
+      <div class="balances-secondLine"><span class="token-ixo--balances">IXO</span>${collateral | numberFormat}</div>
+      <div class="balances-thirdLine">&dollar;${collateralDollar | numberFormat}</div>
     </div>
     <div class="col-md-1">
-      <div class="firstLine">ALPHA</div>
-      <div id="alphaValue" class="secondLine">${alpha}&percnt;</div>
-      <div class="thirdLine">${alphaDate}</div>
+      <div class="balances-firstLine">ALPHA</div>
+      <div id="alphaValue" class="balances-secondLine">${alpha}&percnt;</div>
+      <div class="balances-thirdLine">${alphaDate}</div>
     </div>
   </div>
 </template>
