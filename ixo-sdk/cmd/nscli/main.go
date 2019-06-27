@@ -14,6 +14,11 @@ import (
 	"github.com/tendermint/go-amino"
 	"github.com/tendermint/tendermint/libs/cli"
 
+	app "github.com/cosmos/cosmic/ixo-sdk"
+	nsclient "github.com/cosmos/cosmic/ixo-sdk/x/nameservice/client"
+	nsrest "github.com/cosmos/cosmic/ixo-sdk/x/nameservice/client/rest"
+	pricingclient "github.com/cosmos/cosmic/ixo-sdk/x/pricing/client"
+	pricingrest "github.com/cosmos/cosmic/ixo-sdk/x/pricing/client/rest"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authcmd "github.com/cosmos/cosmos-sdk/x/auth/client/cli"
 	auth "github.com/cosmos/cosmos-sdk/x/auth/client/rest"
@@ -31,11 +36,6 @@ import (
 	st "github.com/cosmos/cosmos-sdk/x/staking"
 	stakingclient "github.com/cosmos/cosmos-sdk/x/staking/client"
 	staking "github.com/cosmos/cosmos-sdk/x/staking/client/rest"
-	app "github.com/cosmos/hackatom"
-	nsclient "github.com/cosmos/hackatom/x/nameservice/client"
-	nsrest "github.com/cosmos/hackatom/x/nameservice/client/rest"
-	pricingclient "github.com/cosmos/hackatom/x/pricing/client"
-	pricingrest "github.com/cosmos/hackatom/x/pricing/client/rest"
 )
 
 const (

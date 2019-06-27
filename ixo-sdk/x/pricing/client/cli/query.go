@@ -2,7 +2,7 @@ package cli
 
 import (
 	"fmt"
-	"github.com/cosmos/hackatom/x/pricing"
+	"github.com/cosmos/cosmic/ixo-sdk/x/pricing"
 
 	"github.com/cosmos/cosmos-sdk/client/context"
 	"github.com/cosmos/cosmos-sdk/codec"

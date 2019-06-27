@@ -1,4 +1,4 @@
-module github.com/cosmos/hackatom
+module github.com/cosmos/cosmic
 
 go 1.12
 
