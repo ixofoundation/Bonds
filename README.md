@@ -1,7 +1,7 @@
 ![](https://i.imgur.com/7YZMVTd.jpg)
 
 # Cosmic Bonding
-Cosmic Bonding is a custom Cosmos SDK module that provides universal token bonding curve functions to mint, burn or swap any token in a Cosmos blockchain.
+Cosmic Bonding is a custom [Cosmos SDK](https://github.com/cosmos/cosmos-sdk) module that provides universal token bonding curve functions to mint, burn or swap any token in a Cosmos blockchain.
 
 In future, once the Cosmos Inter-blockchain Communication protocol is available, this should enable cross-network exchanges of tokens at algormically determined prices.
 
@@ -67,12 +67,13 @@ The module returns the following parameters:
 * Integral price
 ...
 
-## Initialisation
+## Cloning this Repository
 
-Setup sequence...
----
-```sequence
+Run ```go get -u github.com/ixofoundation/cosmic```
 
-:::
-This page is still under construction!
-:::
+## Running the App
+
+For instructions on how to run the Cosmos SDK application containing the Cosmic Bonding module, click [here](./ixo-sdk/README.md). We also built a user interface, but it is currently not wired up to the SDK application. If you still wish to check it out, refer to the instructions [here](./ixo-ui/README.md).
+
+- The code for the SDK application is under ```./ixo-sdk/```
+- The code for the user interface is under ```./ixo-ui/```
