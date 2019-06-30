@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/cosmos/cosmic/ixo-sdk/x/nameservice"
 	"github.com/cosmos/cosmos-sdk/client/context"
+	"github.com/ixofoundation/cosmic/ixo-sdk/x/nameservice"
 
 	clientrest "github.com/cosmos/cosmos-sdk/client/rest"
 	"github.com/cosmos/cosmos-sdk/codec"

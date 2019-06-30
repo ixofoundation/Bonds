@@ -3,9 +3,9 @@ package cli
 import (
 	"fmt"
 
-	"github.com/cosmos/cosmic/ixo-sdk/x/nameservice"
 	"github.com/cosmos/cosmos-sdk/client/context"
 	"github.com/cosmos/cosmos-sdk/codec"
+	"github.com/ixofoundation/cosmic/ixo-sdk/x/nameservice"
 	"github.com/spf13/cobra"
 )
 

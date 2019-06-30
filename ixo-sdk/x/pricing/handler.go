@@ -23,7 +23,13 @@ func NewHandler(keeper Keeper) sdk.Handler {
 }
 
 func handleMsgCreateCosmicBond(ctx sdk.Context, keeper Keeper, msg MsgCreateCosmicBond) sdk.Result {
-	keeper.GetCosmicBond(ctx, msg.Moniker)
+
+	cb := keeper.GetCosmicBond(ctx, msg.Moniker)
+	if !cb.Creator.Empty() {
+		errMsg := fmt.Sprintf("Cosmic bond '%s' already exists", msg.Moniker)
+		return sdk.ErrInternal(errMsg).Result()
+	}
+
 	keeper.SetCreator(ctx, msg.Moniker, msg.Creator)
 	keeper.SetReserveToken(ctx, msg.Moniker, msg.ReserveToken)
 	keeper.SetReserveAddress(ctx, msg.Moniker, msg.ReserveAddress)
@@ -32,12 +38,18 @@ func handleMsgCreateCosmicBond(ctx sdk.Context, keeper Keeper, msg MsgCreateCosm
 	keeper.SetM(ctx, msg.Moniker, msg.M)
 	keeper.SetN(ctx, msg.Moniker, msg.N)
 	keeper.SetAllowSells(ctx, msg.Moniker, msg.AllowSell)
+
 	return sdk.Result{}
 }
 
 func handleMsgBuy(ctx sdk.Context, keeper Keeper, msg MsgBuy) sdk.Result {
 
 	cb := keeper.GetCosmicBond(ctx, msg.Moniker)
+	if cb.Creator.Empty() {
+		errMsg := fmt.Sprintf("Cosmic bond '%s' does not exist", msg.Moniker)
+		return sdk.ErrInternal(errMsg).Result()
+	}
+
 	cost := cb.GetReserveNecessaryForIncreaseInSupply(msg.Amount.Amount)
 
 	err := keeper.coinKeeper.SendCoins(ctx, msg.Buyer, keeper.GetReserveAddress(ctx, msg.Moniker),
@@ -60,6 +72,11 @@ func handleMsgBuy(ctx sdk.Context, keeper Keeper, msg MsgBuy) sdk.Result {
 func handleMsgSell(ctx sdk.Context, keeper Keeper, msg MsgSell) sdk.Result {
 
 	cb := keeper.GetCosmicBond(ctx, msg.Moniker)
+	if cb.Creator.Empty() {
+		errMsg := fmt.Sprintf("Cosmic bond '%s' does not exist", msg.Moniker)
+		return sdk.ErrInternal(errMsg).Result()
+	}
+
 	if cb.AllowSells != "true" {
 		return sdk.ErrInternal("Coin does not allow selling.").Result()
 	}

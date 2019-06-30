@@ -1,8 +1,8 @@
 package client
 
 import (
-	pricingcmd "github.com/cosmos/cosmic/ixo-sdk/x/pricing/client/cli"
 	"github.com/cosmos/cosmos-sdk/client"
+	pricingcmd "github.com/ixofoundation/cosmic/ixo-sdk/x/pricing/client/cli"
 	"github.com/spf13/cobra"
 	"github.com/tendermint/go-amino"
 )

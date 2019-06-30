@@ -2,7 +2,7 @@ package app
 
 import (
 	"encoding/json"
-	"github.com/cosmos/cosmic/ixo-sdk/x/pricing"
+	"github.com/ixofoundation/cosmic/ixo-sdk/x/pricing"
 	"os"
 
 	tmtypes "github.com/tendermint/tendermint/types"
@@ -12,13 +12,13 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/x/auth/genaccounts"
 
-	"github.com/cosmos/cosmic/ixo-sdk/x/nameservice"
 	"github.com/cosmos/cosmos-sdk/x/bank"
 	distr "github.com/cosmos/cosmos-sdk/x/distribution"
 	"github.com/cosmos/cosmos-sdk/x/genutil"
 	"github.com/cosmos/cosmos-sdk/x/params"
 	"github.com/cosmos/cosmos-sdk/x/slashing"
 	"github.com/cosmos/cosmos-sdk/x/staking"
+	"github.com/ixofoundation/cosmic/ixo-sdk/x/nameservice"
 
 	bam "github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"

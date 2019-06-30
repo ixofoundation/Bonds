@@ -1,4 +1,4 @@
-module github.com/cosmos/cosmic
+module github.com/ixofoundation/cosmic/ixo-sdk
 
 go 1.12
 
