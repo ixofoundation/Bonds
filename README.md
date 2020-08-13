@@ -1,3 +1,5 @@
+### **🚨 This repo is outdated. Refer to [ixoworld/bonds/](https://github.com/ixoworld/bonds/) for the latest version 🚨**
+
 ![](https://i.imgur.com/7YZMVTd.jpg)
 
 # Cosmic Bonding
