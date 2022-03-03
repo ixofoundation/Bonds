@@ -1,4 +1,4 @@
-### **🚨 This repo is outdated. Refer to [ixoworld/bonds/](https://github.com/ixoworld/bonds/) for the latest version 🚨**
+### **🚨 This repo is Deprecated. It is kept for historical context. Refer to [ixoworld/bonds/](https://github.com/ixoworld/bonds/) for the latest version 🚨**
 
 ![](https://i.imgur.com/7YZMVTd.jpg)
 
